@@ -49,8 +49,8 @@ function test_zoom_class(){
             $this->user_id = $user_id;
             $this->authorize_url = 'https://zoom.us/oauth/authorize?response_type=code&client_id=eVHbekKR7e9290wrc8OnA&redirect_uri=https%3A%2F%2Fmsp-media.org%2Fnew-group-meeting%2F';
             $this->button =  '<a class="button" href="'.$this->authorize_url.'">Authorize Our App</a>';
-            $clientID = 'eVHbekKR7e9290wrc8OnA';
-            $clientSecret = 'AxNKJCYfVoMEiLVwke4A0hShRj8a2Sji';
+            $clientID = get_option('zoom_oauth_client_ID');
+            $clientSecret = get_option('zoom_oauth_client_secret');
             $this->basic = base64_encode($clientID.':'.$clientSecret);
             $this->set_status();
          } else {
